@@ -1,0 +1,228 @@
+/* Web For All - css/dashboard.css
+   Settings panel (homepage + floating dashboard) and the section tracker dots. */
+
+/* Settings panel (homepage + floating dashboard) */
+
+.panel {
+  background: var(--pn);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: .4rem 1.6rem;
+}
+
+.set {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.set:last-child {
+  border: 0;
+}
+
+.set b {
+  color: var(--ink);
+}
+
+.set small {
+  display: block;
+  color: var(--mute);
+  font-size: calc(.78rem * var(--ts, 1));
+}
+
+.seg {
+  display: flex;
+  gap: .25rem;
+  background: var(--chip);
+  padding: .25rem;
+  border-radius: 12px;
+}
+
+.seg button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: .5rem .75rem;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 700;
+  font-size: calc(.85rem * var(--ts, 1));
+  cursor: pointer;
+  min-width: 2.4rem;
+}
+
+.seg button[aria-pressed=true] {
+  background: var(--btn);
+  color: var(--bi);
+}
+
+.sw {
+  flex: none;
+  width: 3rem;
+  height: 1.7rem;
+  border-radius: 99px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: background .25s;
+}
+
+.sw::after {
+  content: "";
+  position: absolute;
+  top: .2rem;
+  left: .25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform .25s,background .25s;
+}
+
+.sw[aria-checked=true] {
+  background: var(--acc);
+}
+
+.sw[aria-checked=true]::after {
+  transform: translateX(1.25rem);
+  background: var(--bi);
+}
+
+select {
+  font: inherit;
+  padding: .5rem .7rem;
+  border-radius: 10px;
+  border: 1px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+input[type=range] {
+  width: 8rem;
+  accent-color: var(--acc);
+}
+
+.dash {
+  position: fixed;
+  right: 1rem;
+  top: 4.8rem;
+  width: min(26rem,calc(100% - 2rem));
+  max-height: calc(100vh - 6rem);
+  overflow: auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 24px 60px var(--sh);
+  padding: 1rem 1.3rem;
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity .25s,transform .25s,visibility .25s;
+}
+
+.dash.open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.dash .panel {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.dh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dh h2 {
+  font-size: calc(1.3rem * var(--ts, 1));
+}
+
+.dh button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--pn);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.rail {
+  position: fixed;
+  right: .6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+}
+
+.rail a {
+  position: relative;
+  display: block;
+  padding: .45rem;
+}
+
+.rail a::before {
+  content: "";
+  display: block;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  background: var(--mute);
+  opacity: .45;
+  transition: transform .25s,opacity .25s;
+}
+
+.rail a[aria-current=true]::before {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.rail span {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--btn);
+  color: var(--bi);
+  padding: .3rem .7rem;
+  border-radius: 8px;
+  font-size: calc(.78rem * var(--ts, 1));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+
+.rail a:hover span,
+.rail a:focus-visible span {
+  opacity: 1;
+}
+
+/* Text size buttons preview their own size */
+.seg button[data-v="90"] {
+  font-size: 13px;
+}
+.seg button[data-v="100"] {
+  font-size: 15px;
+}
+.seg button[data-v="115"] {
+  font-size: 17px;
+}
+.seg button[data-v="130"] {
+  font-size: 19px;
+}

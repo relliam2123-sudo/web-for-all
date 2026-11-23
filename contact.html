@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f4ee">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111613">
+  <title>Contact | Web For All</title>
+
+  <script src="../js/theme-init.js"></script>
+
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/translations.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/speech.js" defer></script>
+  <script src="../js/layout.js" defer></script>
+  <script src="../js/contact.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+  <main id="main">
+    <section class="band contact contact-container">
+      <div>
+        <p class="eyebrow" data-fil="Pagandahin natin ang web">Let's make the web better</p>
+        <h1 data-fil="May tanong, ideya, o puna?">Questions, ideas, or feedback?</h1>
+        <p class="lead" id="send-message-container" data-fil="Gusto naming marinig ang saloobin mo. Magpadala ng mensahe para matulungan kaming gawing mas kapaki-pakinabang at inklusibo ang Web For All.">We would love to hear from you. Send a message and help us make Web For All more useful and inclusive.</p>
+      </div>
+      <form class="message-form panel" novalidate>
+        <h2 class="message-form-title" style="font-size:1.6rem" data-fil="Padalhan kami ng mensahe">Message us</h2>
+        <label for="name" data-fil="Iyong pangalan">Your name</label>
+        <input id="name" name="name" autocomplete="name" aria-describedby="e-name">
+        <small class="err" id="e-name"></small>
+        <label for="email" data-fil="Email address">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="e-email">
+        <small class="err" id="e-email"></small>
+        <label for="message" data-fil="Iyong mensahe">Your message</label>
+        <textarea id="message" name="message" rows="5" aria-describedby="e-message"></textarea>
+        <small class="err" id="e-message"></small>
+        <button class="btn" type="submit" data-fil="Ipadala ang mensahe ↗">Send message ↗</button>
+        <p id="sent" class="ok" role="status" hidden></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

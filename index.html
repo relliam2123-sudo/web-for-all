@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f4ee">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111613">
+  <title>Web For All</title>
+
+  <script src="js/theme-init.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/utils.js" defer></script>
+  <script src="js/translations.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/speech.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="about-page">
+  <main id="main">
+    <section class="hero homepage-container">
+      <div>
+        <p class="eyebrow" data-fil="Digital na access para sa lahat">Digital access for everyone</p>
+        <h1 class="title" data-fil="Gawing gumana ang digital na mundo para sa <em>lahat</em>.">Make the digital world work <em>for all.</em></h1>
+        <p class="lead" id="home-paragraph-container" data-fil="Hindi dapat hadlang ang teknolohiya kundi pintuan. Alamin ang mga simpleng paraan para maging mas madali ang online space para sa lahat.">Technology should open doors, not create barriers. Learn simple ways to make online spaces easier for everyone to use.</p>
+        <div class="actions">
+          <a class="btn access-guide-button" href="pages/guide.html" data-fil="Tuklasin ang gabay ↗">Explore the guide ↗</a>
+          <a class="link" href="pages/about.html" data-fil="Alamin ang aming misyon">Learn about our mission</a>
+        </div>
+      </div>
+      <div class="illus art" data-ill="hero"></div>
+    </section>
+    <section id="settings" class="band settings-config-container">
+      <div>
+        <p class="eyebrow" data-fil="Gawing komportable">Make it comfortable</p>
+        <h2 id="configure-settings-heading" data-fil="Ang karanasan mo, ang mga setting mo.">Your experience, your settings.</h2>
+        <p class="lead" id="settings-config-paragraph-container" data-fil="Subukan ang mga kontrol at ayusin ang pahinang ito ayon sa mas komportable sa iyo.">Try the controls and adjust this page to what works best for you.</p>
+      </div>
+      <div class="panel panel-mount"></div>
+    </section>
+    <section id="learn">
+      <div class="head">
+        <p class="eyebrow" data-fil="Ang gabay sa accessibility">The accessibility guide</p>
+        <h2 data-fil="Maliliit na pagbabago. <em>Malaking epekto.</em>">Small changes. <em>Big difference.</em></h2>
+      </div>
+      <article class="row">
+        <div>
+          <p class="eyebrow" data-fil="Visual na accessibility">Visual accessibility</p>
+          <h3 data-fil="Tulungan ang lahat na makita ang mahahalaga.">Help everyone see the important things.</h3>
+          <p data-fil="Gumamit ng nababasang teksto, matibay na contrast ng kulay, at layout na hindi umaasa sa kulay lamang.">Use readable text, strong color contrast, and layouts that do not rely on color alone.</p>
+          <ul>
+            <li data-fil="Pumili ng malinaw na font at komportableng laki ng teksto.">Choose clear fonts and comfortable text sizes.</li>
+            <li data-fil="Maglagay ng alternative text sa mahahalagang larawan.">Add alternative text to meaningful images.</li>
+          </ul>
+          <a class="link" href="pages/guide/visual.html" data-fil="Basahin ang gabay">Read the guide</a>
+        </div>
+        <div class="illus" data-ill="visual"></div>
+      </article>
+      <article class="row">
+        <div>
+          <p class="eyebrow" data-fil="Hearing accessibility">Hearing accessibility</p>
+          <h3 data-fil="Hayaang makasabay ang lahat kahit walang tunog.">Let people follow along without sound.</h3>
+          <p data-fil="Tinutulungan ng captions at transcripts ang mga bingi o mahina ang pandinig, at kapaki-pakinabang kapag hindi mapatugtog ang audio.">Captions and transcripts help people who are deaf or hard of hearing, and they help when audio cannot be played.</p>
+          <ul>
+            <li data-fil="Magbigay ng tumpak na captions para sa mga sinasabi.">Provide accurate captions for spoken content.</li>
+            <li data-fil="Huwag magbahagi ng mahalagang impormasyon sa pamamagitan ng tunog lamang.">Do not share important information through sound alone.</li>
+          </ul>
+          <a class="link" href="pages/guide/hearing.html" data-fil="Basahin ang gabay">Read the guide</a>
+        </div>
+        <div class="illus" data-ill="hearing"></div>
+      </article>
+      <article class="row">
+        <div>
+          <p class="eyebrow" data-fil="Physical na accessibility">Physical accessibility</p>
+          <h3 data-fil="Gawing posible ang pag-navigate sa iba't ibang paraan.">Make navigation work in different ways.</h3>
+          <p data-fil="May mga gumagamit ng keyboard, switch device, boses, o ibang kagamitan sa halip na mouse.">Some people use a keyboard, switch device, voice input, or other tools instead of a mouse.</p>
+          <ul>
+            <li data-fil="Gawing magagamit sa keyboard ang bawat interactive na elemento.">Make every interactive element keyboard accessible.</li>
+            <li data-fil="Magpakita ng nakikitang focus indicator.">Show a visible focus indicator.</li>
+          </ul>
+          <a class="link" href="pages/guide/physical.html" data-fil="Basahin ang gabay">Read the guide</a>
+        </div>
+        <div class="illus" data-ill="physical"></div>
+      </article>
+      <article class="row">
+        <div>
+          <p class="eyebrow" data-fil="Cognitive na accessibility">Cognitive accessibility</p>
+          <h3 data-fil="Panatilihing kalmado at malinaw ang karanasan.">Keep the experience calm and clear.</h3>
+          <p data-fil="Mas madaling maintindihan ng marami ang simpleng wika, pare-parehong nabigasyon, at malinaw na tagubilin.">Simple language, consistent navigation, and helpful instructions make content easier for many people.</p>
+          <ul>
+            <li data-fil="Gumamit ng maiikling pangungusap at naglalarawang pamagat.">Use short sentences and descriptive headings.</li>
+            <li data-fil="Ipaliwanag ang mga error at kung paano ito aayusin.">Explain errors and how to fix them.</li>
+          </ul>
+          <a class="link" href="pages/guide/cognitive.html" data-fil="Basahin ang gabay">Read the guide</a>
+        </div>
+        <div class="illus" data-ill="cognitive"></div>
+      </article>
+    </section>
+    <section class="band cta">
+      <div>
+        <p class="eyebrow" data-fil="Isabuhay ang natutunan">Put learning into practice</p>
+        <h2 data-fil="Handa ka na bang subukin ang natutunan mo?">Ready to check what you learned?</h2>
+        <p class="lead" data-fil="Laruin ang accessibility word puzzle at tingnan kung paano nakakatulong ang maliliit na pagpili.">Play the accessibility word puzzle and see how small choices make a big difference.</p>
+      </div>
+      <a class="btn" href="pages/puzzle.html" data-fil="Laruin ang puzzle ↗">Play the puzzle ↗</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* Web For All - css/illustrations.css
+   The pure-CSS illustrations used on the homepage and guide pages. */
+
+/* Illustrations (pure CSS) */
+
+.illus {
+  position: relative;
+  min-height: 19rem;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: var(--c1);
+  overflow: hidden;
+}
+
+[data-ill=hearing] {
+  background: var(--c2);
+}
+
+[data-ill=physical] {
+  background: var(--c3);
+}
+
+[data-ill=cognitive] {
+  background: var(--c4);
+}
+
+.wf {
+  width: min(20rem,85%);
+  background: var(--pn);
+  border-radius: 14px;
+  padding: 1.3rem;
+  display: grid;
+  gap: .6rem;
+}
+
+.wf i {
+  height: .45rem;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.wf .d {
+  height: 1.1rem;
+  width: 62%;
+  background: var(--dark);
+}
+
+.wf .b {
+  height: 1.6rem;
+  width: 30%;
+  background: var(--acc);
+  border-radius: 6px;
+  margin-top: .5rem;
+}
+
+.wave {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  height: 8rem;
+}
+
+.wave i {
+  width: .6rem;
+  height: var(--h);
+  background: var(--acc);
+  border-radius: 9px;
+}
+
+.cap {
+  background: var(--pn);
+  color: var(--ink);
+  padding: .8rem 1.2rem;
+  border-radius: 10px;
+  font-size: calc(.85rem * var(--ts, 1));
+  margin-top: 1rem;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3,3.6rem);
+  gap: .7rem;
+}
+
+.keys b {
+  display: grid;
+  place-items: center;
+  height: 3.4rem;
+  border-radius: 12px;
+  background: var(--pn);
+  color: var(--ink);
+  box-shadow: 0 4px 0 var(--line),0 8px 16px var(--sh);
+  font-size: calc(.9rem * var(--ts, 1));
+}
+
+.steps {
+  display: grid;
+  gap: .8rem;
+  width: min(19rem,100%);
+}
+
+.steps b {
+  background: var(--pn);
+  color: var(--ink);
+  padding: .9rem 1.2rem;
+  border-radius: 12px;
+  font-size: calc(.9rem * var(--ts, 1));
+  box-shadow: 0 6px 16px var(--sh);
+}
+
+.steps b:nth-child(2) {
+  margin-left: 1.2rem;
+}
+
+.steps b:nth-child(3) {
+  margin-left: 2.4rem;
+}
+
+.art {
+  min-height: 27rem;
+  place-items: end center;
+  padding-bottom: 0;
+}
+
+.art .bar {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  background: var(--pn);
+  color: var(--ink);
+  padding: .7rem 1rem;
+  border-radius: 12px;
+  font-size: calc(.75rem * var(--ts, 1));
+}
+
+.bar i {
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: var(--mute);
+}
+
+.bar span {
+  margin-left: auto;
+}
+
+.ppl {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-end;
+}
+
+.ppl i {
+  display: block;
+  position: relative;
+  width: 7rem;
+  height: 9.5rem;
+  border-radius: 3.5rem 3.5rem 0 0;
+  background: #6f8a74;
+}
+
+.ppl i::before {
+  content: "";
+  position: absolute;
+  top: -3.4rem;
+  left: 50%;
+  margin-left: -2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #b98b6b;
+}
+
+.ppl i+i {
+  height: 8rem;
+  background: #8aa08c;
+}
+
+.ppl i+i::before {
+  background: #6b4a3a;
+}
+
+.chip {
+  position: absolute;
+  background: var(--pn);
+  color: var(--ink);
+  padding: .5rem .9rem;
+  border-radius: 12px;
+  font-size: calc(.78rem * var(--ts, 1));
+  font-weight: 700;
+  box-shadow: 0 10px 24px var(--sh);
+}
+
+.c-a {
+  top: 5rem;
+  right: 1.2rem;
+}
+
+.c-b {
+  bottom: 6.5rem;
+  left: 1.2rem;
+}
+
+.note {
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  background: var(--pn);
+  border-radius: 14px;
+  padding: .7rem 1rem;
+  display: grid;
+  font-size: calc(.8rem * var(--ts, 1));
+  line-height: 1.4;
+}
+
+.note b {
+  color: var(--ink);
+}

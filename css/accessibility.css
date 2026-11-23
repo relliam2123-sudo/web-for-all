@@ -1,0 +1,169 @@
+/* Web For All - css/accessibility.css
+   High contrast extras, reduced motion, hover/touch rules and the speaking highlight. */
+
+[data-contrast=high] :is(.card,.band,.panel,.dash,.illus,.btn,.pill,.hint,.tile,.key-tile) {
+  border: 2px solid var(--ink);
+}
+
+[data-contrast=high] a:not(.btn):not(.link):not(.logo):not(.pillar):not(.skip) {
+  text-decoration: underline;
+}
+
+/* Motion (all of it switched off by "Reduce motion" or the system setting) */
+
+.rv {
+  opacity: 0;
+}
+
+.rv.in {
+  opacity: 1;
+  animation: up .7s ease backwards;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes fl {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes wv {
+  50% {
+    transform: scaleY(.55);
+  }
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes flip {
+  50% {
+    transform: scaleY(0);
+  }
+}
+
+.chip {
+  animation: fl 5s ease-in-out infinite;
+}
+
+.c-b {
+  animation-delay: -2s;
+}
+
+.wave i {
+  animation: wv 1.6s ease-in-out infinite;
+}
+
+.wave i:nth-child(odd) {
+  animation-delay: -.8s;
+}
+
+.tile.filled {
+  animation: pop .12s;
+}
+
+.tile.flip {
+  animation: flip .5s;
+}
+
+[data-calm=on] *,
+[data-calm=on] *::before,
+[data-calm=on] *::after {
+  animation: none!important;
+  transition: none!important;
+  scroll-behavior: auto!important;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+/* Text-to-speech highlight */
+
+.speaking {
+  outline: 2px solid var(--acc);
+  outline-offset: 6px;
+  border-radius: 18px;
+  transition: outline-color .2s;
+}
+
+.card.speaking {
+  border-color: var(--acc);
+}
+
+/* Hover only where a real pointer exists (no sticky hover on phones) */
+
+@media (hover:hover) {
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px var(--sh);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px var(--sh);
+  }
+  .read:hover {
+    background: var(--sage);
+    transform: translateY(-1px);
+  }
+  .link:hover,
+  .pill:hover {
+    background: var(--btn);
+    color: var(--bi);
+  }
+  .nav-links a:not([aria-current=page]):hover {
+    background: var(--sage);
+  }
+}
+
+/* Touch */
+
+button,
+.btn,
+.link,
+.pill,
+.key-tile,
+.seg button,
+.sw {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+select {
+  font-size: max(16px,calc(1rem * var(--ts, 1)));
+}
+
+.sw::before {
+  content: "";
+  position: absolute;
+  inset: -.6rem -.3rem;
+}
+
+@media (pointer:coarse) {
+  .read,
+  .seg button,
+  .nav-links a,
+  .link {
+    min-height: 2.75rem;
+  }
+  .seg button {
+    min-width: 2.75rem;
+  }
+}

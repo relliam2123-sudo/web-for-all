@@ -1,0 +1,144 @@
+/* Web For All - css/navigation.css
+   Top navbar, the Accessibility button and the footer. */
+
+/* Navigation */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 2rem;
+  background: var(--card);
+  background: color-mix(in srgb,var(--card) 88%,transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  font-size: calc(1.25rem * var(--ts, 1));
+  text-decoration: none;
+  letter-spacing: -.03em;
+}
+
+.logo b {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: .7rem;
+  background: var(--btn);
+  color: var(--bi);
+}
+
+.logo i {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  gap: .3rem;
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: calc(.85rem * var(--ts, 1));
+  padding: .4rem .95rem;
+  border-radius: 99px;
+  transition: background .2s,color .2s;
+}
+
+.nav-links a[aria-current=page] {
+  background: var(--btn);
+  color: var(--bi);
+}
+
+.pill {
+  justify-self: end;
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .55rem 1.1rem;
+  border-radius: 99px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  font-size: calc(.85rem * var(--ts, 1));
+  cursor: pointer;
+  transition: background .2s,color .2s;
+}
+
+.pill[aria-expanded=true] {
+  background: var(--btn);
+  color: var(--bi);
+}
+
+/* Footer */
+
+.site-footer {
+  background: #1f2d26;
+  color: #e8ebe6;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.site-footer p {
+  color: inherit;
+  font-size: calc(.8rem * var(--ts, 1));
+}
+
+.site-footer p:last-child {
+  text-align: right;
+}
+
+.site-footer .logo b {
+  background: #aab8a8;
+  color: #111;
+}
+
+[data-contrast=high] .site-footer {
+  background: #000;
+  color: #fff;
+}
+
+/* Menu button: only shown on phones (see responsive.css) */
+.menu {
+  display: none;
+  align-items: center;
+  gap: .5rem;
+  min-height: 2.75rem;
+  padding: .55rem 1.1rem;
+  border-radius: 99px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  font-size: calc(.85rem * var(--ts, 1));
+  cursor: pointer;
+}
+.menu[aria-expanded=true] {
+  background: var(--btn);
+  color: var(--bi);
+}

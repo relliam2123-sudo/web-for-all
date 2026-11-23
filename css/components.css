@@ -1,0 +1,231 @@
+/* Web For All - css/components.css
+   Buttons, link pills, cards, the Read aloud button and form fields. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .9rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid var(--btn);
+  background: var(--btn);
+  color: var(--bi);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s,box-shadow .2s;
+}
+
+.btn.alt {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.link,
+button.link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 2.6rem;
+  padding: .55rem 1.15rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: calc(.9rem * var(--ts, 1));
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s,color .2s;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.7rem;
+  box-shadow: var(--rest);
+  transition: transform .25s,box-shadow .25s;
+}
+
+.card h3 {
+  margin-bottom: .5rem;
+}
+
+.card.dark {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: #f2f1ec;
+}
+
+.card.dark p,
+.card.dark .eyebrow {
+  color: #e3e8e0;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  min-height: 14rem;
+  text-decoration: none;
+}
+
+.pillar small {
+  font-size: calc(.75rem * var(--ts, 1));
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--ink);
+}
+
+.pillar span {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: calc(1.4rem * var(--ts, 1));
+}
+
+.c1 {
+  background: var(--c1);
+}
+
+.c2 {
+  background: var(--c2);
+}
+
+.c3 {
+  background: var(--c3);
+}
+
+.c4 {
+  background: var(--c4);
+}
+
+.vals {
+  list-style: none;
+  display: grid;
+  gap: .8rem;
+}
+
+.vals li {
+  padding: 1rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.vals b {
+  color: var(--ink);
+}
+
+.refs {
+  padding-left: 1.2rem;
+  display: grid;
+  gap: .6rem;
+  margin-top: 1.2rem;
+}
+
+.read {
+  margin-top: 1rem;
+  padding: .5rem .95rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  color: var(--ink);
+  font: inherit;
+  font-size: calc(.8rem * var(--ts, 1));
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s,transform .2s;
+}
+
+/* Forms */
+
+.message-form {
+  padding: 1.8rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: calc(.85rem * var(--ts, 1));
+  margin: 1rem 0 .4rem;
+  color: var(--ink);
+}
+
+input,
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: .85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--edge);
+  background: var(--card);
+  color: var(--ink);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--ink);
+}
+
+[aria-invalid=true] {
+  border: 2px solid var(--err);
+}
+
+.err {
+  display: block;
+  min-height: 1.3rem;
+  color: var(--err);
+  font-weight: 600;
+  font-size: calc(.85rem * var(--ts, 1));
+  margin-top: .3rem;
+}
+
+.message-form .btn {
+  margin-top: .6rem;
+}
+
+.ok {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--sage);
+  color: var(--ink);
+  font-weight: 600;
+  border: 1px solid var(--line);
+}
+
+.refs a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  overflow-wrap: anywhere;
+}
+
+/* Space between the Read aloud button and the buttons under it */
+
+.read + .actions {
+  margin-top: 1.5rem;
+}
+
+/* Bigger vision and mission text */
+
+.vision-container .card {
+  padding: 2.2rem;
+}
+
+.vision-container .card h3 {
+  font-size: calc(clamp(1.9rem, 3vw, 2.5rem) * var(--ts, 1));
+  margin-bottom: .8rem;
+}
+
+.vision-container .card p {
+  font-size: calc(1.25rem * var(--ts, 1));
+  line-height: 1.6;
+}
+
+.vision-container .card .eyebrow {
+  font-size: calc(.8rem * var(--ts, 1));
+}

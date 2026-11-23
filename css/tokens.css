@@ -1,0 +1,110 @@
+/* Web For All - css/tokens.css */
+
+/* Light */
+:root {
+  --bg: #f6f4ee;
+  --ink: #1b2620;
+  --mute: #384842;
+  --card: #ffffff;
+  --pn: #fbfaf6;
+  --sage: #e2ebe3;
+  --chip: #eaf0ea;
+  --line: #e3dfd2;
+  --edge: #7f9087;
+  --dark: #24382f;
+  --btn: #24382f;
+  --bi: #ffffff;
+  --acc: #4e7a63;
+  --em: #27503c;
+  --f: #0b57d0;
+  --err: #a31d12;
+  --sh: #1b262026;
+  --rest: 0 1px 2px #1b26200d, 0 10px 28px -14px #1b262033;
+  --glow: radial-gradient(55rem 28rem at 88% -6%, #e1ebe2 0%, transparent 65%);
+  --c1: #dce8df;
+  --c2: #f2e5d5;
+  --c3: #dce8ee;
+  --c4: #f0dfd8;
+}
+
+/* Dark */
+[data-theme=dark] {
+  color-scheme: dark;
+  --bg: #111613;
+  --ink: #f2f1ec;
+  --mute: #cdd1cb;
+  --card: #1c231f;
+  --pn: #171e1a;
+  --sage: #212a25;
+  --chip: #26332b;
+  --line: #3a453e;
+  --edge: #6e8077;
+  --dark: #0a0e0c;
+  --btn: #f2f1ec;
+  --bi: #111513;
+  --acc: #9db8a2;
+  --em: #a9c9b0;
+  --f: #9ec1ff;
+  --err: #ffb4ab;
+  --sh: #0009;
+  --rest: none;
+  --glow: radial-gradient(55rem 28rem at 88% -6%, #1b2a21 0%, transparent 65%);
+  --c1: #243029;
+  --c2: #2b2a26;
+  --c3: #232b2d;
+  --c4: #2a2c25;
+}
+
+/* High contrast (light) */
+[data-contrast=high] {
+  --bg: #fff;
+  --ink: #000;
+  --mute: #000;
+  --card: #fff;
+  --pn: #fff;
+  --sage: #fff;
+  --chip: #fff;
+  --line: #000;
+  --edge: #000;
+  --dark: #000;
+  --btn: #000;
+  --bi: #fff;
+  --acc: #000;
+  --em: #000;
+  --f: #c00;
+  --err: #a00;
+  --sh: #0002;
+  --rest: none;
+  --glow: none;
+  --c1: #fff;
+  --c2: #fff;
+  --c3: #fff;
+  --c4: #fff;
+}
+
+/* High contrast (dark) */
+[data-contrast=high][data-theme=dark] {
+  --bg: #000;
+  --ink: #fff;
+  --mute: #fff;
+  --card: #000;
+  --pn: #000;
+  --sage: #000;
+  --chip: #000;
+  --line: #fff;
+  --edge: #fff;
+  --dark: #000;
+  --btn: #ff0;
+  --bi: #000;
+  --acc: #ff0;
+  --em: #ff0;
+  --f: #ff0;
+  --err: #ffb4ab;
+  --sh: #000;
+  --rest: none;
+  --glow: none;
+  --c1: #000;
+  --c2: #000;
+  --c3: #000;
+  --c4: #000;
+}

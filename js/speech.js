@@ -13,15 +13,12 @@ if('speechSynthesis' in window) {
   speechSynthesis.onvoiceschanged=loadVoices
 }
 
-/* iPhone / iPad (iPadOS reports itself as a Mac with touch) */
+/* iPhone */
 const isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 
-/* Old novelty / robotic iOS voices. "Whisper" is the very quiet one. */
+/* Old novelty / robotic iOS voices */
 const BAD_VOICE=/albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph/i;
 
-/* iOS plays speech quietly on the "ambient" audio channel.
-   Playing a silent looping sound (started from a tap) moves the page to the
-   "playback" channel, which uses full media volume and ignores the silent switch. */
 let keep=null;
 function silentWav() {
   const sr=8000,n=sr/2;

@@ -1,7 +1,6 @@
-/* Web For All - js/contact.js
-   Contact form validation (only loaded on pages) */
+/* Web For All - js/contact.js */
 
-/* Contact form: front-end validation */
+/* Contact form */
 
 function contact() {
   const f=$('.message-form');

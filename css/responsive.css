@@ -1,5 +1,5 @@
 /* Web For All - css/responsive.css
-   Tablet and phone layouts. Keep this file last so it can override the rest. */
+   Tablet and phone layouts */
 
 /* Responsive */
 
@@ -43,7 +43,7 @@
   }
 }
 
-/* Phones: one vertical column, bottom-sheet settings, full-width buttons */
+/* Phones */
 
 @media (max-width:860px) {
   .navbar {
@@ -112,7 +112,7 @@
   }
 }
 
-/* Phone navigation: logo, Menu and Accessibility on one slim row; the links drop down over the page */
+/* Phone navigation: logo, Menu and Accessibility */
 @media (max-width:860px) {
   .navbar {
     grid-template-columns: 1fr auto auto;
@@ -173,7 +173,7 @@
   }
 }
 
-/* Locked phone layout: spacing and boxes stay fixed, only the text grows with the Text size setting */
+/* Locked phone layout: spacing and boxes stay fixed */
 @media (max-width:860px) {
   html {
     font-size: 17px;

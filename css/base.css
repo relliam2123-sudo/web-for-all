@@ -104,8 +104,6 @@ a {
   z-index: 80;
 }
 
-/* No blank frame while the shared navbar is being built, and no English flash for Filipino readers */
-
 body:not(.ready)::before {
   content: "";
   display: block;
@@ -117,8 +115,6 @@ body:not(.ready)::before {
 html[data-pre] body:not(.ready) main {
   visibility: hidden;
 }
-
-/* Smooth page-to-page transitions where the browser supports them */
 
 @view-transition {
   navigation: auto;

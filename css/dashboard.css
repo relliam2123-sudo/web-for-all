@@ -1,7 +1,7 @@
 /* Web For All - css/dashboard.css
-   Settings panel (homepage + floating dashboard) and the section tracker dots. */
+   Settings panel (homepage +  dashboard) and section tracker dots. */
 
-/* Settings panel (homepage + floating dashboard) */
+/* Settings panel (homepage +  dashboard) */
 
 .panel {
   background: var(--pn);
@@ -213,7 +213,7 @@ input[type=range] {
   opacity: 1;
 }
 
-/* Text size buttons preview their own size */
+/* Text size buttons */
 .seg button[data-v="90"] {
   font-size: 13px;
 }

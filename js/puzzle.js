@@ -1,7 +1,7 @@
 /* Web For All - js/puzzle.js
    Word puzzle game (only loaded on pages/puzzle.html). */
 
-/* Word puzzle ( losing on the 6th guess shows answer, hints) */
+/* Word puzzle */
 
 function puzzle() {
   const B=$('#board');

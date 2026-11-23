@@ -1,6 +1,7 @@
 /* Web For All - js/theme-init.js
    Runs before the page paints so the saved theme, text size and brightness are already applied.
    This is what stops a light flash when you move between pages in dark mode. */
+
 (function () {
   try {
     var html = document.documentElement;

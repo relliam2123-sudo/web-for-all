@@ -2,7 +2,7 @@
    Read aloud using the browser speechSynthesis API only: best voice, sentence queue,
    pause/resume and the .speaking highlight. */
 
-/* Text-to-speech: browser speechSynthesis only. Best voice, sentence queue, pause/resume, highlight */
+/* Text-to-speech: browser speechSynthesis pause/resume */
 const T={q:[],i:0,st:'idle',run:0,live:false,tm:0,cur:null,page:false,u:null};
 let voices=[];
 if('speechSynthesis' in window) {

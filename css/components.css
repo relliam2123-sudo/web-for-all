@@ -204,13 +204,9 @@ textarea:focus {
   overflow-wrap: anywhere;
 }
 
-/* Space between the Read aloud button and the buttons under it */
-
 .read + .actions {
   margin-top: 1.5rem;
 }
-
-/* Bigger vision and mission text */
 
 .vision-container .card {
   padding: 2.2rem;

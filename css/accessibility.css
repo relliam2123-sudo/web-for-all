@@ -1,5 +1,5 @@
 /* Web For All - css/accessibility.css
-   High contrast extras, reduced motion, hover/touch rules and the speaking highlight. */
+   High contrast extras, reduced motion, hover/touch rules and speaking highlight. */
 
 [data-contrast=high] :is(.card,.band,.panel,.dash,.illus,.btn,.pill,.hint,.tile,.key-tile) {
   border: 2px solid var(--ink);
@@ -9,7 +9,7 @@
   text-decoration: underline;
 }
 
-/* Motion (all of it switched off by "Reduce motion" or the system setting) */
+/* Motion (switched "Reduce motion") */
 
 .rv {
   opacity: 0;
@@ -93,7 +93,7 @@
   }
 }
 
-/* Text-to-speech highlight */
+/* Text-to-speech */
 
 .speaking {
   outline: 2px solid var(--acc);

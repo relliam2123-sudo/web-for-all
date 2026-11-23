@@ -1,6 +1,6 @@
 /* Web For All - js/speech.js
    Read aloud using the browser speechSynthesis API only: best voice, sentence queue,
-   pause/resume and the .speaking highlight. */
+   pause/resume */
 
 /* Text-to-speech: browser speechSynthesis pause/resume */
 const T={q:[],i:0,st:'idle',run:0,live:false,tm:0,cur:null,page:false,u:null};
@@ -13,16 +13,62 @@ if('speechSynthesis' in window) {
   speechSynthesis.onvoiceschanged=loadVoices
 }
 
+/* iPhone / iPad (iPadOS reports itself as a Mac with touch) */
+const isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+
+/* Old novelty / robotic iOS voices. "Whisper" is the very quiet one. */
+const BAD_VOICE=/albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph/i;
+
+/* iOS plays speech quietly on the "ambient" audio channel.
+   Playing a silent looping sound (started from a tap) moves the page to the
+   "playback" channel, which uses full media volume and ignores the silent switch. */
+let keep=null;
+function silentWav() {
+  const sr=8000,n=sr/2;
+  const b=new ArrayBuffer(44+n);
+  const d=new DataView(b);
+  const w=(o,s)=>[...s].forEach((c,i)=>d.setUint8(o+i,c.charCodeAt(0)));
+  w(0,'RIFF');d.setUint32(4,36+n,true);w(8,'WAVEfmt ');d.setUint32(16,16,true);
+  d.setUint16(20,1,true);d.setUint16(22,1,true);d.setUint32(24,sr,true);d.setUint32(28,sr,true);
+  d.setUint16(32,1,true);d.setUint16(34,8,true);w(36,'data');d.setUint32(40,n,true);
+  for(let i=0;i<n;i++)d.setUint8(44+i,128);
+  return URL.createObjectURL(new Blob([b],{type:'audio/wav'}))
+}
+function unlockAudio() {
+  if(!isIOS)return;
+  try {
+    if(!keep) {
+      keep=new Audio(silentWav());
+      keep.loop=true;
+      keep.setAttribute('playsinline','');
+      keep.volume=.01
+    }
+    const p=keep.play();
+    if(p&&p.catch)p.catch(()=> {})
+  } catch(e) {}
+}
+function releaseAudio() {
+  if(keep)keep.pause()
+}
+
 function pickVoice() {
   const want=S.lang==='fil'?['fil-ph','tl-ph','fil','tl']:['en-us','en-gb','en'];
-  const lg=v=>v.lang.toLowerCase().replace('_','-');
+  const lg=v=>v.lang.toLowerCase().replace(/_/g,'-');
   const at=v=>want.findIndex(w=>lg(v)===w||lg(v).startsWith(w+'-'));
-  let pool=voices.filter(v=>at(v)>-1);
+  let pool=voices.filter(v=>at(v)>-1&&!BAD_VOICE.test(v.name));
+  if(!pool.length)pool=voices.filter(v=>at(v)>-1);
   if(!navigator.onLine) {
     const local=pool.filter(v=>v.localService);
     if(local.length)pool=local
   }
-  const score=v=>(want.length-at(v))*10+(/natural|neural/i.test(v.name)?8:0)+(/online/i.test(v.name)?5:0)+(/google/i.test(v.name)?4:0)+(/microsoft/i.test(v.name)?3:0);
+  const score=v=>(want.length-at(v))*10
+      +(/premium|enhanced/i.test(v.name)?12:0)
+      +(/natural|neural/i.test(v.name)?8:0)
+      +(/online/i.test(v.name)?5:0)
+      +(/google/i.test(v.name)?4:0)
+      +(/microsoft/i.test(v.name)?3:0)
+      +(/samantha|ava|allison|susan|karen|daniel|moira/i.test(v.name)?6:0)
+      +(v.default?2:0);
   return pool.sort((a,b)=>score(b)-score(a))[0]||null
 }
 
@@ -57,6 +103,7 @@ function stopTTS() {
     speechSynthesis.cancel();
     if(speechSynthesis.paused)speechSynthesis.resume()
   }
+  releaseAudio();
   mark(null);
   ttsUI()
 }
@@ -69,7 +116,7 @@ function next() {
   const u=new SpeechSynthesisUtterance(it.c);
   const v=pickVoice();
   if(v)u.voice=v;
-  u.lang=v?v.lang:S.lang==='fil'?'fil-PH':'en-US';
+  u.lang=v?v.lang.replace(/_/g,'-'):S.lang==='fil'?'fil-PH':'en-US';
   u.rate=.94;
   u.pitch=1;
   u.volume=1;
@@ -96,6 +143,7 @@ function go(items,page) {
   stopTTS();
   T.q=items.flatMap(o=>sents(o.t).map(c=>({c,el:o.el})));
   if(!T.q.length)return;
+  unlockAudio();
   T.st='playing';
   T.page=page;
   ttsUI();
@@ -110,6 +158,7 @@ function toggleRead() {
     T.st='paused';
     if(T.live)speechSynthesis.pause()
   } else {
+    unlockAudio();
     T.st='playing';
     if(T.live)speechSynthesis.resume();
     else T.tm=setTimeout(next,60)

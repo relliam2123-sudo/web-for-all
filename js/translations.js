@@ -1,7 +1,7 @@
 /* Web For All - js/translations.js
-   Filipino text for the interface. Page content carries its own Filipino in data-fil attributes. */
+   Filipino text */
 
-/* Filipino for interface text. Page content carries its own Filipino in data-fil attributes. */
+/* Filipino interface text */
 const L={
   Home:'Tahanan',
   'Accessibility Guide':'Gabay sa Accessibility',

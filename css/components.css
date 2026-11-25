@@ -143,8 +143,12 @@ button.link {
 
 /* Forms */
 
-.message-form {
+.message-form.panel {
   padding: 1.8rem;
+}
+
+.message-form h2 {
+  margin-bottom: .4rem;
 }
 
 label {
@@ -185,7 +189,9 @@ textarea:focus {
 }
 
 .message-form .btn {
-  margin-top: .6rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .ok {

@@ -7,7 +7,6 @@ function contact() {
   if(!f)return;
   const V={
     name:v=>v.trim()?'':'Please enter your name so we know who to reply to.',
-    email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())?'':'Please enter an email address like name@example.com.',
     message:v=>v.trim().length>=10?'':'Please write at least 10 characters so we can understand your message.'
   };
   const chk=el=> {
